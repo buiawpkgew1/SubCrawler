@@ -27,7 +27,7 @@ jobs:
       - run: sudo timedatectl set-timezone Asia/Shanghai
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Cache Gradle packages
+      - name: 缓存梯度包
         uses: actions/cache@v3
         with:
           path: |
@@ -37,7 +37,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       # Runs a single command using the runners shell
       - run: chmod  777 ./gradlew  && chmod +x ./litespeed/lite
-      - name: execute gradle test
+      - name: 执行梯度测试
         run: ./gradlew  :test --tests "me.leon.NodeCrawler.crawl"
       - run: git config --global user.email "actions@github.com" &&git config --global user.name "GitHub Actions"
       - run: chmod  777 ./up.sh && ./up.sh
