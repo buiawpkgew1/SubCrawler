@@ -1,4 +1,4 @@
-name: Qodana - Code Inspection
+name: Qodana - 代码检查
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
             ${{ runner.os }}-qodana-${{ github.ref }}
             ${{ runner.os }}-qodana-
 
-      - name: Qodana - Code Inspection
+      - name: Qodana - 代码检查
         uses: JetBrains/qodana-action@v2.2.1-eap
 
       - uses: actions/upload-artifact@v3
