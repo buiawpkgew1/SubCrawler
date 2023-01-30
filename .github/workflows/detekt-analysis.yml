@@ -10,7 +10,7 @@
 # The workflow should work with no modifications, but you might like to use a
 # later version of the Detekt CLI by modifying the $DETEKT_RELEASE_TAG
 # environment variable.
-name: Scan with Detekt
+name: 用Detekt扫描
 
 on:
   # Triggers the workflow on push or pull request events but only for default and protected branches
@@ -51,7 +51,7 @@ jobs:
       - uses: actions/checkout@v3
 
       # Gets the download URL associated with the $DETEKT_RELEASE_TAG
-      - name: Get Detekt download URL
+      - name: 获取检测到的下载URL
         id: detekt_info
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
